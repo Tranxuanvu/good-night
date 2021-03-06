@@ -20,7 +20,7 @@
 #
 FactoryBot.define do
   factory :user_relationship do
-    # follower { FactoryBot.create(:user) }
-    # followee { FactoryBot.create(:user) }
+    follower { FactoryBot.create(:user) }
+    followee { FactoryBot.create(:user) }
   end
 end

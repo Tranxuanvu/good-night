@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      resources :auths, only: %i[] do
+        collection do
+          post :login
+        end
+      end
+
+      post 'users/:id/follow', to: 'follows#create'
+      delete 'users/:id/unfollow', to: 'follows#destroy'
+    end
+  end
 end

@@ -90,6 +90,7 @@ GEM
       activesupport (>= 5.0.0)
     jsonapi-serializer (2.1.0)
       activesupport (>= 4.2)
+    jwt (2.2.2)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -110,6 +111,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pagy (3.11.0)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
@@ -159,6 +161,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.4)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
@@ -259,11 +264,14 @@ DEPENDENCIES
   ffaker
   jbuilder (~> 2.7)
   jsonapi-serializer (~> 2.1)
+  jwt
   listen (~> 3.2)
+  pagy
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.5)
+  responders
   rspec-rails
   rubocop
   rubocop-performance
