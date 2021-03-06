@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  go_to_bed_at :datetime
+#  length_time  :decimal(, )
 #  wake_up_at   :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -19,4 +20,14 @@ class Sleep < ApplicationRecord
 
   # Association
   belongs_to :user
+
+  before_save :calculate_length_time_sleep
+
+  private
+
+  def calculate_length_time_sleep
+    return if wake_up_at.blank?
+
+    self.length_time = (wake_up_at - go_to_bed_at) / 1.hour
+  end
 end

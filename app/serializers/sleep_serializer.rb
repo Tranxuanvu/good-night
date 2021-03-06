@@ -14,10 +14,13 @@
 #
 #  index_sleeps_on_user_id  (user_id)
 #
-FactoryBot.define do
-  factory :sleep do
-    go_to_bed_at { '2021-03-04 06:23:58' }
-    wake_up_at { '2021-03-04 06:23:58' }
-    user
+class SleepSerializer
+  include JSONAPI::Serializer
+
+  attributes :go_to_bed_at, :wake_up_at
+
+  attribute :length_time do |object|
+    time = object.length_time.to_f
+    "#{time} hour".pluralize(time)
   end
 end

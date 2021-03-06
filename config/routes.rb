@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
       post 'users/:id/follow', to: 'follows#create'
       delete 'users/:id/unfollow', to: 'follows#destroy'
+      get 'friends-sleep-time-past-week', to: 'sleeps#sleep_friends_past_week'
     end
   end
 end

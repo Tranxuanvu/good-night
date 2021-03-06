@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  go_to_bed_at :datetime
+#  length_time  :decimal(, )
 #  wake_up_at   :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
